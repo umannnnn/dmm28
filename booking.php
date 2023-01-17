@@ -82,7 +82,7 @@ if ( isset($_POST["kirim"])){
                         <section class="banner-section">
                             <div class="p-2 mb-3"> 
                                 <h1 class="card-title" name="namaMobil"><?php echo $details["namaMobil"]; ?></h1> 
-                                <h5 class="card-subtitle py-1 text-muted" name="biayaSewa">Rp.<?php echo $details["biayaSewa"];?>/hari</h5> 
+                                <h5 class="card-subtitle py-1 text-muted" name="biayaSewa">Rp. <?php echo $details["biayaSewa"];?></h5> 
                             </div>
                             <div class="">
                                 <div class="vehicle-detail-banner banner-content clearfix">
@@ -258,7 +258,12 @@ if ( isset($_POST["kirim"])){
                         <form action="" method="POST">
                             <div class="mb-3">
                                 <label for="merk" class="col-form-label">Merk Mobil :</label>
-                                <input type="text" name="merk" class="form-control" id="merk" value="<?php echo $details["namaMobil"]; ?>">
+                                <input type="text" name="merk" class="form-control" id="merk" value="<?php echo $details["namaMobil"]; ?> " readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="biaya" class="col-form-label">Biaya Sewa Mobil :</label>
+                                <input type="text" name="biaya" class="form-control" id="biaya" value="<?php echo $details["biayaSewa"]; ?> " readonly>
+                                <div id="emailHelp" class="form-text">Biaya sewa per harinya</div>
                             </div>
                             <div class="mb-3">
                                 <label for="nama" class="col-form-label">Nama Lengkap :</label>
@@ -371,9 +376,8 @@ if ( isset($_POST["kirim"])){
 
     <script>
     config = {
-        altInput: true,
-        altFormat: "j F Y",
-        dateFormat: "j F Y",
+        enableTime: false,
+        dateFormat: "d-m-Y",
     }
     
     flatpickr("input[type=datetime-local]", config);

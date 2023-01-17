@@ -95,6 +95,7 @@ function dataPelanggan($pelanggan){ //function dataPelanggan dan parameter $pela
 
     $pemesan = $_SESSION['username'];
     $merk = $pelanggan["merk"];
+    $biaya = $pelanggan["biaya"];
     $nama = $pelanggan["nama"];
     $noKtp = $pelanggan["noKtp"];
     $alamat = $pelanggan["alamat"];
@@ -103,7 +104,7 @@ function dataPelanggan($pelanggan){ //function dataPelanggan dan parameter $pela
     $tglBalik = $pelanggan["tglBalik"];
     $fotoKtp = $pelanggan["fotoKtp"];
 
-    $query = "INSERT INTO datapelanggan VALUES ('','$pemesan', '$merk', '$nama', '$noKtp', '$alamat', '$noHp', '$tglPesan', '$tglBalik', '$fotoKtp', 'status')";
+    $query = "INSERT INTO datapelanggan VALUES ('','$pemesan', '$merk', '$biaya', '$nama', '$noKtp', '$alamat', '$noHp', '$tglPesan', '$tglBalik', '$fotoKtp', 'status')";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
