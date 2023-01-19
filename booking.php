@@ -11,6 +11,10 @@ require 'function.php'; //pengambilan fungsi-fungsi yang ada pada bagian functio
 $id_mobil = $_GET["id_mobil"];
 $details = query("SELECT * FROM detailmobil WHERE id_mobil=$id_mobil")[0]; //untuk menampilkan detailmobil sesuai dengan id masing-masing
 
+$username = $_SESSION['username'];
+$pelanggan = "SELECT * FROM datapelanggan WHERE pemesan='$username'";
+$result = mysqli_query($conn, $pelanggan);
+
 if ( isset($_POST["kirim"])){
     if ( dataPelanggan($_POST) > 0){ //fungsi untuk mengirimkan data pelanggan ke database menggunakan method POST
         echo "
@@ -59,10 +63,14 @@ if ( isset($_POST["kirim"])){
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pesanan</a>
-                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start">
-                            <span class="dropdown-header text-center">Invoice Masuk</span>
-                            <li><a class="dropdown-item" href="#">Invoice untuk id Pesanan #882</a></li>
-                        </ul>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start">
+                                <span class="dropdown-header text-center">Invoice Masuk</span>
+                                <?php foreach ( $result as $row ) : ?>
+                                    <li>
+                                        <a class="btn dropdown-item" href="detail-invoice.php?id_pelanggan=<?= $row["id_pelanggan"]; ?>">Invoice : INV-<?= $row["id_pelanggan"]; ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         </li>
                     </ul>
                     <a class="nav-link" href="utama.php">Home</a>

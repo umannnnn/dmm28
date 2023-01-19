@@ -82,10 +82,58 @@ function tambahDetail($data){ //function tambahDetail dan parameter $data untuk 
     return mysqli_affected_rows($conn);
 }
 
+function updateDetail($data){ //function tambahDetail dan parameter $data untuk proses menambahkan mobil
+    global $conn;
+
+    $id_mobil = $data["id_mobil"];
+    $gambar = $data["gambar"];
+    $detail = $data["detail"];
+    $namaMobil = $data["namaMobil"];
+    $biayaSewa = $data["biayaSewa"];
+    $tampilMobil = $data["tampilMobil"];
+    $interMobil1 = $data["interMobil1"];
+    $interMobil2 = $data["interMobil2"];
+    $interMobil3 = $data["interMobil3"];
+    $exterMobil1 = $data["exterMobil1"];
+    $exterMobil2 = $data["exterMobil2"];
+    $exterMobil3 = $data["exterMobil3"];
+    $transmisiMobil = $data["transmisiMobil"];
+    $bahanBakar = $data["bahanBakar"];
+    $mesinMobil = $data["mesinMobil"];
+    $tempatDuduk = $data["tempatDuduk"];
+    $gambarReview = $data["gambarReview"];
+    $reviewMobil = $data["reviewMobil"];
+    $linkReviewUser = $data["linkReviewUser"];
+    $videoReview1 = $data["videoReview1"];
+    $videoReview2 = $data["videoReview2"];
+    $videoReview3 = $data["videoReview3"];
+    $videoReview4 = $data["videoReview4"];
+    $textReview1 = $data["textReview1"];
+    $textReview2 = $data["textReview2"];
+    $textReview3 = $data["textReview3"];
+    $textReview4 = $data["textReview4"];
+
+    $query = "UPDATE detailmobil SET  
+        gambar = '$gambar', detail = '$detail',
+        namaMobil = '$namaMobil', biayaSewa = '$biayaSewa', tampilMobil = '$tampilMobil', 
+        interMobil1 = '$interMobil1', interMobil2 = '$interMobil2', interMobil3 = '$interMobil3', 
+        exterMobil1 = '$exterMobil1', exterMobil2 = '$exterMobil2', exterMobil3 = '$exterMobil3', 
+        transmisiMobil = '$transmisiMobil', bahanBakar = '$bahanBakar', mesinMobil = '$mesinMobil', 
+        tempatDuduk = '$tempatDuduk', gambarReview = '$gambarReview', reviewMobil = '$reviewMobil', 
+        linkReviewUser = '$linkReviewUser', videoReview1 = '$videoReview1', videoReview2 = '$videoReview2', 
+        videoReview3 = '$videoReview3', videoReview4 = '$videoReview4', textReview1 = '$textReview1', 
+        textReview2 = '$textReview2', textReview3 = '$textReview3', textReview4 = '$textReview4'
+        WHERE id_mobil = $id_mobil";
+        
+        mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
 function hapus($id){ //function hapus dan parameter $id untuk proses hapus mobil berdasarkan id mobil tersebut
     global $conn;
 
-    mysqli_query($conn, "DELETE FROM detailmobil WHERE id = $id");
+    mysqli_query($conn, "DELETE FROM detailmobil WHERE id_mobil = $id");
 
     return mysqli_affected_rows($conn);
 }

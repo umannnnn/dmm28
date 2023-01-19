@@ -97,10 +97,10 @@ $tampiluser = mysqli_fetch_assoc($tampiluser);
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index2.php" class="brand-link">
+    <p class="brand-link">
       <img src="img/Logo/12.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
-      <span class="brand-text font-weight-light">Dmm28 Rent Car</span>
-    </a>
+      <span class="brand-text">Dmm28 Rent Car</span>
+    </p>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -110,8 +110,8 @@ $tampiluser = mysqli_fetch_assoc($tampiluser);
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo  $_SESSION['username']; ?></a>
-          <a class="nav-link" href="logout.php">Logout</a>
+          <p class="d-block"><?php echo  $_SESSION['username']; ?></p>
+          <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="logout.php">Logout</a>
         </div>
       </div>
 
@@ -119,11 +119,33 @@ $tampiluser = mysqli_fetch_assoc($tampiluser);
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">  
           <li class="nav-header">DASHBOARD</li>
-          <li class="nav-item">
-            <a href="./index2.php" class="nav-link">
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Armada</p>
+              <p>Dashboard
+              <i class="right fas fa-angle-left"></i>
+              </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./index2.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Armada</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./tambahArmada.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tambah Armada</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./updateArmada.php" class="nav-link disabled">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Update Armada</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="./index3.php" class="nav-link">
@@ -258,8 +280,8 @@ $tampiluser = mysqli_fetch_assoc($tampiluser);
                         <img style="width: 130px; height: 70px;" src="img/png mobil/<?= $row["tampilMobil"];?>">
                       </td>
                       <td>
-                        <button type="button" class="btn btn-block btn-success btn-sm">Edit</button>
-                        <a href="hapus.php?id=<?= $row["id_mobil"];?>" class="btn btn-block btn-danger btn-sm">Hapus</a>
+                        <a href="updateArmada.php?id_mobil=<?= $row["id_mobil"];?>" style="margin-bottom: 8px;" class="btn btn-block btn-success btn-sm" >Edit</a>
+                        <a href="hapus.php?id_mobil=<?= $row["id_mobil"];?>" class="btn btn-block btn-danger btn-sm">Hapus</a>
                       </td>
                       <td>
                       </td>
@@ -271,151 +293,6 @@ $tampiluser = mysqli_fetch_assoc($tampiluser);
                 <!-- /.table-responsive -->
               </div>
               <!-- /.card-body -->
-
-              <div class="card-footer clearfix">
-                <button type="button" class="btn btn-sm btn-info float-left" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah Armada</button>
-                    <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable modal-md"> 
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Mobil</h1>
-                        </div>
-                        <div class="modal-body">
-                          <form action="" method="POST">
-                            <div class="card-body row">
-                              <div class="form-group mr-1">
-                                <label for="InputText">Nama Mobil</label>
-                                <input type="text" class="form-control" name="namaMobil" id="InputText">
-                              </div> 
-                              <div class="form-group">
-                                <label for="InputText">Biaya Sewa Mobil</label>
-                                <input type="text" class="form-control" name="biayaSewa" id="InputText">
-                              </div>
-                              <div class="form-group mb-5">
-                                <label for="detail">Detail Mobil</label>
-                                <input type="text" class="form-control" name="detail" id="detail">
-                              </div>
-                              <div class="form-group">
-                                  <label for="gambar" class="form-label">Gambar Mobil</label>
-                                  <input type="file" class="form-control" name="gambar" id="gambar" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="tampilMobil" class="form-label">Tampilan Mobil</label>
-                                  <input type="file" class="form-control" name="tampilMobil" id="tampilMobil" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="interMobil1" class="form-label">Interior 1</label>
-                                  <input type="file" class="form-control" name="interMobil1" id="interMobil1" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="interMobil2" class="form-label">Interior 2</label>
-                                  <input type="file" class="form-control" name="interMobil2" id="interMobil2" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="interMobil3" class="form-label">Interior 3</label>
-                                  <input type="file" class="form-control" name="interMobil3" id="interMobil3" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="exterMobil1" class="form-label">Exterior 1</label>
-                                  <input type="file" class="form-control" name="exterMobil1" id="exterMobil1" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="exterMobil2" class="form-label">Exterior 2</label>
-                                  <input type="file" class="form-control" name="exterMobil2" id="exterMobil2" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="exterMobil3" class="form-label">Exterior 3</label>
-                                  <input type="file" class="form-control" name="exterMobil3" id="exterMobil3" required>
-                              </div>
-                              <div class="form-group mr-3 mb-5">
-                                  <label for="inputFile" class="form-label">Gambar Review</label>
-                                  <input type="file" class="form-control" name="gambarReview" id="inputFile" required>
-                              </div>
-                              <div class="form-group mr-3">
-                                <label>Transmisi Mobil</label>
-                                <select class="form-control" name="transmisiMobil">
-                                  <option>Otomatis</option>
-                                  <option>Manual</option>
-                                </select>
-                              </div>
-                              <div class="form-group mr-3">
-                                <label>Bahan Bakar</label>
-                                <select class="form-control" name="bahanBakar">
-                                  <option>Solar</option>
-                                  <option>Bensin</option>
-                                </select>
-                              </div>
-                              <div class="form-group mr-3">
-                                <label>Tempat Duduk</label>
-                                <select class="form-control" name="tempatDuduk">
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                  <option>6</option>
-                                  <option>7</option>
-                                  <option>8</option>
-                                  <option>9</option>
-                                  <option>10</option>
-                                </select>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText">Mesin Mobil (cc)</label>
-                                <input type="text" class="form-control" name="mesinMobil" id="inputText">
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="InputText">Review Mobil</label>
-                                <input type="text" class="form-control" name="reviewMobil" id="InputText" required>
-                              </div> 
-                              <div class="form-group mr-3 mb-5">
-                                <label for="InputText">Review User</label>
-                                <input type="text" class="form-control" name="linkReviewUser" id="InputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Video Review 1</label>
-                                <input type="Text" class="form-control" name="videoReview1" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Text Review 1</label>
-                                <input type="Text" class="form-control" name="textReview1" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Video Review 2</label>
-                                <input type="Text" class="form-control" name="videoReview2" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Text Review 2</label>
-                                <input type="Text" class="form-control" name="textReview2" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Video Review 3</label>
-                                <input type="Text" class="form-control" name="videoReview3" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Text Review 3</label>
-                                <input type="Text" class="form-control" name="textReview3" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Video Review 4</label>
-                                <input type="Text" class="form-control" name="videoReview4" id="inputText" required>
-                              </div>
-                              <div class="form-group mr-1">
-                                <label for="inputText" class="form-label">Text Review 4</label>
-                                <input type="Text" class="form-control" name="textReview4" id="inputText" required>
-                              </div> 
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                              <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              <!-- /.card-footer -->
             </div>
             <!-- /.card -->
           </div>

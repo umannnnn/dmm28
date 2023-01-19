@@ -78,10 +78,10 @@ $pelanggan = query("SELECT * FROM datapelanggan");
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index2.php" class="brand-link">
-      <img src="img/Logo/12.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Dmm28 Rent Car</span>
-    </a>
+    <p class="brand-link">
+      <img src="img/Logo/12.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+      <span class="brand-text">Dmm28 Rent Car</span>
+    </p>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -91,8 +91,8 @@ $pelanggan = query("SELECT * FROM datapelanggan");
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Usman Pamungkas</a>
-          <a class="nav-link" href="logout.php">Logout</a>
+          <p class="d-block">Usman Pamungkas</p>
+          <a type="button" class="btn btn-outline-info btn-sm" class="nav-link" href="logout.php">Logout</a>
         </div>
       </div>
 
@@ -103,11 +103,11 @@ $pelanggan = query("SELECT * FROM datapelanggan");
           <li class="nav-item">
             <a href="./index2.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Armada</p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="./index3.php" class="nav-link">
+            <a href="./index3.php" class="nav-link active">
               <i class="nav-icon fas fa-book"></i>
               <p>Pesanan</p>
             </a>
@@ -265,7 +265,7 @@ $pelanggan = query("SELECT * FROM datapelanggan");
                             if ($row['status'] == 0) {
                             echo "";
                             }else{
-                              echo "<a href='https://api.whatsapp.com/send?phone=".$row["noHp"]."&text=DMM%2028%20Rent%20Car%20%0AID%20Inovice%20:%20INV-0".$row["id_pelanggan"]."%0A%0AKepada%20:%0A%0ANama%20:%20".$row["nama"]."%0ANo%20KTP%20:%20".$row["noKtp"]."%0AAlamat%20:%20".$row["alamat"]."%0A%0ADeskripsi%20:%0A%0APemesanan%20Mobil%20:%20".$row["merk"]."%0ATanggal%20Pemesanan%20Mobil%20:%20*".$row["tglPesan"]."*%0ATanggal%20Pengembalian%20Mobil%20:%20*".$row["tglBalik"]."*%0A%0A=============================%0ATotal%20Biaya%20Pemesanan%20:%20*Rp.350.000*%20%0A=============================%0A%0AMetode%20Pembayaran%20:%20%0A%0ABank%20BRI%20:%20*5276375235283*%20%0ADana%20:%20*082227974000*%20%0AShopeepay%20:%20*082223507171*%20%0A%0AMaksimal%20Pembayaran%20*1%20Hari*%20Setelah%20Invoice%20ini%20Dikirim,%20Apabila%20belum%20dibayarkan%20maka%20pesanan%20otomatis%20dibatalkan.%20' class='btn btn-info btn-sm'>Kirim Invoice</a>";
+                              echo "<a href='https://api.whatsapp.com/send?phone=".$row["noHp"]."&text=DMM%2028%20Rent%20Car%20%0AID%20Inovice%20:%20INV-0".$row["id_pelanggan"]."%0A%0A*Kepada*%20:%0A%0ANama%20:%20".$row["nama"]."%0ANo%20KTP%20:%20".$row["noKtp"]."%0AAlamat%20:%20".$row["alamat"]."%0A%0A*Deskripsi*%20:%0A%0APemesanan%20Mobil%20:%20".$row["merk"]."%0ATanggal%20Pemesanan%20Mobil%20:%20*".$row["tglPesan"]."*%0ATanggal%20Pengembalian%20Mobil%20:%20*".$row["tglBalik"]."*%0A%0A*Metode%20Pembayaran%20:*%20%0A%0ABank%20BRI%20:%20*5276375235283*%20%0ADana%20:%20*082227974000*%20%0AShopeepay%20:%20*082223507171*%20%0A%0ATotal%20biaya%20pemesanan%20dapat%20dilihat%20di%20bagian%20Invoice%20pada%20halaman%20website%20pengguna.%20Maksimal%20Pembayaran%20*1%20Hari*%20Setelah%20Invoice%20ini%20Dikirim,%20Apabila%20belum%20dibayarkan%20maka%20pesanan%20otomatis%20dibatalkan.%20' class='btn btn-info btn-sm' target='_blank'>Kirim Invoice</a>";
                             }
                           ?>
                         </td>
