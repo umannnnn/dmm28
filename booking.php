@@ -231,14 +231,7 @@ if ( isset($_POST["kirim"])){
                     <div class="card-body">
                         <h4 class="card-title">Review Mobil</h4>
                         <h6 class="card-subtitle mb-3 text-muted"><?php echo $details["namaMobil"]; ?></h6>
-                        <p>PT Toyota Astra Motor (TAM) selaku Agen Pemegang Merek Toyota di Indonesia resmi meluncurkan salah satu mobil LCGC (Low Cost Green Car) 
-                            mereka, yaitu Toyota Agya versi facelift. </p>
-                        <p>Mobil ini diluncurkan pada tahun 2013 lalu dan telah mendapatkan pembaruan pada beberapa bagian, seperti pada sisi eksterior dan 
-                            interiornya yang kini tampak lebih modern, serta fitur-fitur yang disematkan pun juga lebih canggih. Toyota Agya terbaru ini dinilai 
-                            dapat terus meningkatkan penjualan kendaraan mobil Toyota karena mobil LCGC tersebut bisa mencapai pangsa pasar hingga 30% pada tahun 
-                            2016 lalu.</p>
-                        <p>Selain itu, Toyota Agya dibanderol dengan harga yang terjangkau dan dibekali beragam fitur yang cukup mumpuni guna menambah kenyamanan 
-                            bagi pengemudi dan penumpang mobil tersebut. Konsep desainnya sendiri mengikuti selera anak-anak muda yang kekinian. </p>
+                        <p><?php echo $details["reviewMobil"]; ?></p>
                     </div>
                 </div>
 
@@ -318,7 +311,7 @@ if ( isset($_POST["kirim"])){
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe <?php echo $details["videoReview1"]; ?>></iframe>
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview1"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview1"]; ?></p>
                             </div>
@@ -330,7 +323,7 @@ if ( isset($_POST["kirim"])){
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe <?php echo $details["videoReview2"]; ?>></iframe>                            
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview2"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview2"]; ?></p>
                             </div>
@@ -342,7 +335,7 @@ if ( isset($_POST["kirim"])){
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe <?php echo $details["videoReview3"]; ?>></iframe>                            
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview3"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview3"]; ?></p>
                             </div>
@@ -354,7 +347,7 @@ if ( isset($_POST["kirim"])){
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe <?php echo $details["videoReview4"]; ?>></iframe>                           
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview4"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview4"]; ?></p>
                             </div>

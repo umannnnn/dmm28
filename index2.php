@@ -10,25 +10,6 @@ require 'function.php'; //pengambilan fungsi-fungsi yang ada pada bagian functio
 
 $mobil = query("SELECT * FROM detailmobil"); // ambil data dari tabel mobil
 
-if ( isset($_POST["submit"])){ //menambahkan detail mobil baru 
-
-    if ( tambahDetail($_POST) > 0){
-        echo "
-            <script>
-                alert('Detail data berhasil ditambahkan!');
-                document.location.href = 'index2.php';
-                </script> 
-            ";
-    } else {
-        echo "
-            <script>
-                alert('Detail data gagal ditambahkan!');
-                document.location.href = 'index2.php';
-                </script> 
-            ";
-    }
-}
-
 $hitungarmada = "select count(id_mobil) as jumlah from detailmobil"; //fungsi untuk menampilkan jumlah armada atau jumlah mobil yang ada di tabel detailmobil
 $jmlarmada = $conn->query($hitungarmada);
 $jmlarmada = mysqli_fetch_row($jmlarmada);
