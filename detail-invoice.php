@@ -46,10 +46,6 @@ $pelanggan = query("SELECT * FROM datapelanggan");
                 <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: INV-0<?= $details["id_pelanggan"]; ?></strong></p>
                 </div>
                 <div class="col-xl-3 float-end">
-                <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
-                    class="fas fa-print text-primary"></i> Print</a>
-                <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i
-                    class="far fa-file-pdf text-danger"></i> Export</a>
                 <a href="utama.php" type="button" class="btn-close" aria-label="Close"></a>
                 </div>
                 <hr>

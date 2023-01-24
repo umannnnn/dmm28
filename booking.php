@@ -83,7 +83,7 @@ if ( isset($_POST["kirim"])){
 
     <div class="grid container">
         <div class="row mt-5">
-            <div class="col-12 col-md-8 mt-3 border">
+            <div class="col-12 col-md-8 mt-3">
                 <!-- User this HTML for Slider -->
                 <div class="card my-3">
                     <div class="card-body">
@@ -251,7 +251,7 @@ if ( isset($_POST["kirim"])){
                 </div>
             </div>
 
-            <div class="col-12 col-md-4 mt-3 border " style="z-index: 2;">
+            <div class="col-12 col-md-4 mt-3 " style="z-index: 2;">
                 <div class="card my-3 pemesanan-column sticky-top">
                     <div class="card-body">
                         <h5 class="card-title">FORM ISI DATA PELANGGAN</h5>
@@ -307,11 +307,11 @@ if ( isset($_POST["kirim"])){
 
         <div class="row my-3">
             <h4 class="card-title text-center">Review Videos</h4>
-            <div class="col-12 col-lg-3 my-2 border">
+            <div class="col-12 col-lg-3 my-2">
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe style="height: 150px;" src="<?php echo $details["videoReview1"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview1"]; ?>" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview1"]; ?></p>
                             </div>
@@ -319,11 +319,11 @@ if ( isset($_POST["kirim"])){
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3 my-2 border">
+            <div class="col-12 col-lg-3 my-2">
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe style="height: 150px;" src="<?php echo $details["videoReview2"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview2"]; ?>" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview2"]; ?></p>
                             </div>
@@ -331,11 +331,11 @@ if ( isset($_POST["kirim"])){
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3 my-2 border">
+            <div class="col-12 col-lg-3 my-2">
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe style="height: 150px;" src="<?php echo $details["videoReview3"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview3"]; ?>" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview3"]; ?></p>
                             </div>
@@ -343,11 +343,11 @@ if ( isset($_POST["kirim"])){
                     </div>
                 </div>  
             </div>
-            <div class="col-12 col-lg-3 my-2 border">
+            <div class="col-12 col-lg-3 my-2">
                 <div class="card">
                     <div class="card-body row content">
                         <div class="card" >
-                            <iframe style="height: 150px;" src="<?php echo $details["videoReview4"]; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe style="height: 150px;" src="<?php echo $details["videoReview4"]; ?>" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body" style="height: 104px;">
                             <p class="card-text"><?php echo $details["textReview4"]; ?></p>
                             </div>
